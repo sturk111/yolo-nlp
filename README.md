@@ -121,7 +121,7 @@ Now that we have managed to represent our input text as a sequence of meaningful
 
 YOLO begins by breaking up the input into a discrete set of cells.  For images, these cells correspond to a grid of boxes, where each box encloses a distinct subset of image pixels.  For sequence data, like natural language text, the cells correspond to a set of bins, where each bin contains a distinct susbet of tokens.  
 
-![Alt text]()
+![Alt text](cells.jpg)
 
 The basic idea is that each bin is responsible for recognizing a named entity only if the starting token of the named entity falls within the bin in question. Thus for each bin we perform a regression on four variables: class probability, starting position of the named entity within the bin, length of the named entity (in number of tokens), and a confidence score, representing the model's confidence that the bin in fact contains a named entity.  Constructing the model is fairly straightforward, as seen below:
 
